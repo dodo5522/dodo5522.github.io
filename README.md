@@ -2,9 +2,9 @@
 
 ## プロフィール
 
-現在、ヘルスケアIoT製品とサービスを手掛けるスタートアップ企業にて、主にIoT Edgeデバイスファームウェア開発、R&D試作基板設計開発、センサデータ分析/製品化等を担当しています。
+現在はヘルスケアサービスを提供するスタートアップ企業で、主にIoTデバイスファームウェア開発業務に従事。ソフトウェア開発のみならず、試作基板設計/実装、データ分析、ツール開発、生産管理等、幅広い業務を担当しています。
 
-ドライバポーティングや下位ミドルウェア、ツール開発、テスト、CI環境インフラ構築、工場生産ライン効率化等幅広く経験しており、常に人数×工数の削減を意識した効率化を念頭に置いています。
+過去実績も含めた経験領域としては、ドライバポーティングや下位ミドルウェア、ツール開発、テスト、CI環境インフラ構築、工場生産ライン効率化等幅広く経験しており、常に人数×工数の削減を意識した効率化を念頭に置いて業務を遂行します。
 
 Pythonを用いたデータ解析や機械学習、Flaskを用いたWebアプリケーション開発等、業務としては未経験の分野に対しても意欲を持ちながら学習を継続しています。
 
@@ -15,11 +15,11 @@ Pythonを用いたデータ解析や機械学習、Flaskを用いたWebアプリ
 | 2002-2006 | N社向け心電計開発 |
 | 2006-2016 | T社 民生用映像機器自社製品開発 |
 | 2016-2017 | S社/O社向け 撮像装置開発 |
-| 2017-2018 | S社 ヘルスケアIoT製品/サービス開発 |
+| 2017-2019 | S社 ヘルスケアIoT製品/サービス開発 |
 
 ## スキル
 
-C/C++ / Python / TypeScript / Javascript / Node.js / Linux / Git / Hg / SVN / Plantuml / Circuit Prototyping / vim
+C/C++ / Python / TypeScript / Javascript / Node.js / Linux / Git / Mercurial / SVN / Plantuml / Circuit Prototyping / vim
 
 ## 主な成果物
 
@@ -37,9 +37,9 @@ C/C++ / Python / TypeScript / Javascript / Node.js / Linux / Git / Hg / SVN / Pl
 
 太陽光蓄発電装置の各種データをDBに集約するためのデーモンプログラムです。
 
-### Solar Monitor Web Site
+### [Solar Monitor Web Site](https://grid.uribou.tokyo/)
 
-収集したデータは[Webブラウザ](http://grid.uribou.mydns.jp)上で、以下のように閲覧できます。日付指定して過去データ閲覧も可能です。
+収集したデータはブラウザで閲覧可能です。
 
 ![](https://farm5.staticflickr.com/4209/35086175820_e43aa99a9d_z_d.jpg)
 
