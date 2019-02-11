@@ -59,3 +59,27 @@ C/C++ / Python / TypeScript / Javascript / Node.js / Linux / Git / Mercurial / S
  'Kilowatt Hours': {'group': 'Counter', 'unit': 'kWh', 'value': 237.0},
  'Target Voltage': {'group': 'Battery', 'unit': 'V', 'value': 28.6}}
 ```
+
+### 放射線量定点観測システム
+
+自前の空間放射線量定点観測システムです。フロントにはReactを使っています。
+
+#### Webモニタ (React)
+
+DBに記録したデータをリアルタイムに可視化します。[github](https://github.com/dodo5522/geiger-counter-viewer)にコードを公開しています。
+
+[リンク先](http://geiger.uribou.tokyo/)にて、以下のように閲覧可能です。
+
+[![](geiger-screenshot.png)](http://geiger.uribou.tokyo/)
+
+#### データロガー (Node.js)
+
+空間放射線量データをDBに記録するデーモンです。[github](https://github.com/dodo5522/GeigerCounterLogger)にコードを公開しています。
+
+#### ガイガーカウンタファームウェア for SEN-11345 (C言語)
+
+sparkfun製ガイガーカウンタはArduinoを積んでいるので、ファームウェアを変更することが可能です。[github](https://github.com/dodo5522/GeigerCounter)にコードを公開しています。
+
+ロギングしやすくするために出力データの単位をcpsからcpmに変更し、フォーマットをjson形式にしました。これにより、データロガー側は出力データを`JSON.parse`するだけで良くなります。
+
+![](https://camo.githubusercontent.com/b538118a57946c2c9ec58afee5fbdc024b16e1be/68747470733a2f2f646c6e6d6839697036763275632e636c6f756466726f6e742e6e65742f696d616765732f70726f64756374732f312f312f332f342f352f31313334352d3031615f6d656469756d2e6a7067)
