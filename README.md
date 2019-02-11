@@ -10,36 +10,52 @@ Pythonを用いたデータ解析や機械学習、Flaskを用いたWebアプリ
 
 ## 略歴
 
-| Date | Jobs |
+| Date range | Jobs |
 |:----|:----|
-| 2002-2006 | N社向け心電計開発 |
-| 2006-2016 | T社 民生用映像機器自社製品開発 |
-| 2016-2017 | S社/O社向け 撮像装置開発 |
-| 2017-2019 | S社 ヘルスケアIoT製品/サービス開発 |
+| 2002.04-2006.06 | N社向け心電計開発 |
+| 2006.09-2016.09 | T社 民生用映像機器等自社製品開発 |
+| 2016.10-2018.03 | S社/O社向け 撮像装置開発 |
+| 2017.09-2019現在 | S社 ヘルスケアIoT製品/サービス開発 |
 
 ## スキル
 
 C/C++ / Python / TypeScript / Javascript / Node.js / Linux / Git / Mercurial / SVN / Plantuml / Circuit Prototyping / vim
 
-## 主な成果物
+## 主な個人的成果物
 
-業務における公開可能な成果物は無いので、個人的に制作したものを以下に記載します。
+ほとんどがNode.jsやPythonで書いたものです。
 
-### [TS-MPPT Solar Charge Controller Data Logger Module for Python](https://pypi.org/project/tsmppt60-driver/)
+### オリジナル太陽光発電監視システム
 
-電気工事士の資格を取得し、自宅の庭に太陽光パネルや蓄電池を設置。発電状況データロガーをPythonで書きました。[PyPi](https://pypi.org/project/tsmppt60-driver/)に公開しており、`pip install tsmppt60-driver`コマンドでインストール可能です。
+自宅の庭に架台を作り、太陽光パネルと蓄電池を設置しました。発電状況がWeb経由で監視できたら面白いのではないかと思い、充放電コントローラからデータを引き抜くPythonモジュールを作成し、Raspberry PiのデーモンがオンラインのDBにデータを記録、可視化したデータをブラウザで閲覧可能にしました。
 
-下記写真はパネルを設置するための架台を自作する（娘）の図。
+下記は、太陽光パネル架台制作を手伝う娘の図。
 
 ![](https://farm1.staticflickr.com/778/23246846115_6b302c0b24_z_d.jpg)
 
-### [Solar Monitor Daemon](https://github.com/dodo5522/solar_monitor)
+#### Webモニタ (HTML/CSS/JavaScript)
 
-太陽光蓄発電装置の各種データをDBに集約するためのデーモンプログラムです。
+収集した発電量データを可視化します。[リンク先](https://grid.uribou.tokyo/)にて閲覧可能です。
 
-### [Solar Monitor Web Site](https://grid.uribou.tokyo/)
+[![](https://farm5.staticflickr.com/4209/35086175820_e43aa99a9d_z_d.jpg)](https://grid.uribou.tokyo/)
 
-収集したデータはブラウザで閲覧可能です。
+#### データロガー (Python)
 
-![](https://farm5.staticflickr.com/4209/35086175820_e43aa99a9d_z_d.jpg)
+発電量データをDBに記録するデーモンです。[github](https://github.com/dodo5522/solar_monitor)に公開しています。
 
+あるイベントをトリガーにして、接続機器の電源を自動OFFしたり、状況をTwitterに呟いたりする機能を後に追加しましたが、あまり役に立っていません…。
+
+#### 充放電コントローラドライバ (Python)
+
+以下のようなデータを充放電コントローラから抜き出すPythonモジュールです。[PyPi](https://pypi.org/project/tsmppt60-driver/)に公開しています。
+
+```
+{'Amp Hours': {'group': 'Counter', 'unit': 'Ah', 'value': 18097.9},
+ 'Array Current': {'group': 'Array', 'unit': 'A', 'value': 1.4},
+ 'Array Voltage': {'group': 'Array', 'unit': 'V', 'value': 53.41},
+ 'Battery Voltage': {'group': 'Battery', 'unit': 'V', 'value': 23.93},
+ 'Charge Current': {'group': 'Battery', 'unit': 'A', 'value': 3.2},
+ 'Heat Sink Temperature': {'group': 'Temperature', 'unit': 'C', ...},
+ 'Kilowatt Hours': {'group': 'Counter', 'unit': 'kWh', 'value': 237.0},
+ 'Target Voltage': {'group': 'Battery', 'unit': 'V', 'value': 28.6}}
+```
